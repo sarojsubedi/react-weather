@@ -13,7 +13,7 @@ useEffect (()=>{
         const response = await fetch(`https://goweather.xyz/weather/${city}`);
         const result = await response.json();
         setUtaKoResult(result);
-        setError(!response.status == 200 ? true : false);
+        setError(response.status == 404 ? true : false);
         setIsLoading(false);
 };
 weather();
