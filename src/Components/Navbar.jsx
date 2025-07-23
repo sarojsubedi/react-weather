@@ -5,9 +5,9 @@ function Navbar() {
     return (
         <>
             <ul className={styles.list}>
-                <li>Home</li>
-                <li>About</li>
-                <li>More to come</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="https://github.com/sarojsubedi" target="_blank" rel="noopener noreferrer">More to come</a></li>
             </ul>
             <hr/>
         </>

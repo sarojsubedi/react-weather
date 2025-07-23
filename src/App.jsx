@@ -1,5 +1,4 @@
 import Navbar from "./Components/Navbar.jsx";
-import WeatherCard from "./Components/WeatherCard.jsx";
 import WeatherConverter from "./Components/WeatherConverter.jsx";
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <WeatherCard/> */}
       <WeatherConverter/>
     </>
   )

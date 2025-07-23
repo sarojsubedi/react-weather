@@ -1,0 +1,21 @@
+.mainform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card{
+    font-size: 1.125rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px hsl(0, 5%, 25%);
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+}
+
+.error{
+    color:hsl(0, 50%, 50%);
+}

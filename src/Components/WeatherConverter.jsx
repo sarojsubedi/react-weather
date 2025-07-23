@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import styles from './weatherconverter.module.css'
 
 function WeatherConverter() {
     const [city, setCity] = useState("Kathmandu");
     const [utaKoResult, setUtaKoResult] = useState({});
-    const [userInput, setUserInput] = useState("Kathmandu");
+    const [userInput, setUserInput] = useState("");
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -26,20 +27,24 @@ function storeCity(e){
 }
 
     return (
-        <>
-        <form action="">
+        <div className={styles.card}>
+        <div className={styles.mainform}>        
+            <form action="">
             <input type="text" placeholder='Enter City Name' value = {userInput} onChange ={(e)=>setUserInput(e.target.value)}/>
             <button type="submit" onClick={(e)=> storeCity(e)}>Search</button>
-        </form>
+            </form>
+        </div>
 
-        <div>{error && <p>City not found</p>}</div>
-        {isLoading? (<p>Loading is a bit slow, have patience.🫩</p>):
-        (<div><p>City: {city}</p>
-        <p>Temperature: {utaKoResult.temperature}</p>
-        <p>Description : {utaKoResult.description}</p>
-        <p>Wind: {utaKoResult.wind}</p></div>)}
+        <div className={styles.error}>{error && <p>City not found</p>}</div>
+        <div className={styles.error}>{isLoading && (<p>Loading is a bit slow, have patience.</p>)}</div>
         
-        </>
+        <div className={styles.result}>
+            <p>City: {city}</p>
+            <p>Temperature: {utaKoResult.temperature}</p>
+            <p>Description : {utaKoResult.description}</p>
+            <p>Wind: {utaKoResult.wind}</p>
+        </div>
+        </div>
     );
 }
 export default WeatherConverter;
